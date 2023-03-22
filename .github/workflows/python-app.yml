@@ -1,0 +1,38 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python application
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Test
+      run: |
+        python3 main.py
+      env:
+        userIds: 68343930
+        authKeys: AVBLZe9gqFr77JwD:etgSBAAAAAA=
+        secretKeys: c+FFhKMJqMPC3nBW:etgSBAAAAAA=
+        verCode: 48a1e86bdbb80b4795204d447cfc073ce21b132a5bd5b096cb919830b1d3b93e
+        UserAgent: nullvalue
+        TGBotToken: nullvalue
+        TGAdminId: nullvalue
+        GithubToken: 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
+        GithubName: anubishh
+
